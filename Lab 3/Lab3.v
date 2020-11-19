@@ -31,7 +31,6 @@ module Lab3(a0, a1, s, result, a0_output, a1_output, result_output, cout, cout_o
 	assign a1_output[5] = ~((~a1[0] & a1[1] & ~a1[2] & ~a1[3]) | (~a1[0] & a1[1] & ~a1[2] & a1[3]) | (~a1[0] & a1[1] & a1[2] & ~a1[3]) | (a1[0] & ~a1[1] & ~a1[2] & ~a1[3]) | (a1[0] & ~a1[1] & ~a1[2] & a1[3]) | (a1[0] & ~a1[1] & a1[2] & ~a1[3]) | (a1[0] & ~a1[1] & a1[2] & a1[3]) | (a1[0] & a1[1] & ~a1[2] & ~a1[3]) | (a1[0] & a1[1] & a1[2] & ~a1[3]) | (a1[0] & a1[1] & a1[2] & a1[3]) | (~a1[0] & ~a1[1] & ~a1[2] & ~a1[3]));
 	assign a1_output[6] = (~a1[0] & ~a1[1] & ~a1[2]) | (~a1[0] & a1[1] & a1[2] & a1[3]) | (a1[0] & a1[1] & ~a1[2] & ~a1[3]);
 	
-	// Here we check if the switch s is 1 or 0 and if the cout is 1 or 0 
 	// cout = 0 & s = 1 -> - should appear on HEX1
 	// cout = 1 & s = 1 -> HEX1 should be blank
 	// cout = 0 & s = 0 -> HEX1 should be blank
