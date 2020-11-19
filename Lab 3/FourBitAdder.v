@@ -19,8 +19,7 @@ module FourBitAdder(a0, a1, ci, r, co, s);
 	xor(b1, a1[1], s);
 	xor(b0, a1[0], s);
 	
-	// We then add the s into the carry in initially to get the + 1 on the 2's complement 
-	// if it is a subtraction. If it isnt then the carry will just be 0 initially and we proceed
+	// We add the s into the cin initially to get the + 1 on the 2's complement 
 	
 	// Then the carry form each full adder are wired together to create a ripple carry adder/subtractor
 	FullAdder f1(a0[3], b3, s, r[3], c1);

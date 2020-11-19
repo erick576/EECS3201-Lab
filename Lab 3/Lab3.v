@@ -11,11 +11,7 @@ module Lab3(a0, a1, s, result, a0_output, a1_output, result_output, cout, cout_o
 	output [0 : 6] result_output;
 	output [0 : 6] cout_output;
 	
-	// Use the FourBitAdder Module to complete the operation
 	FourBitAdder f1(a0, a1, 0, result, cout, s);
-
-	
-	// Took these 7 Digit Decoders from my Lab 2 for the a0_output and a1_output
 	
 	// Display a0_output
 	assign a0_output[0] = ~((~a0[0] & ~a0[1] & a0[2] & ~a0[3]) | (~a0[0] & ~a0[1] & a0[2] & a0[3]) | (~a0[0] & a0[1] & ~a0[2] & a0[3]) | (~a0[0] & a0[1] & a0[2] & ~a0[3]) | (~a0[0] & a0[1] & a0[2] & a0[3]) | (a0[0] & ~a0[1] & ~a0[2] & ~a0[3]) | (a0[0] & ~a0[1] & ~a0[2] & a0[3]) | (a0[0] & ~a0[1] & a0[2] & ~a0[3]) | (a0[0] & a0[1] & ~a0[2] & ~a0[3]) | (a0[0] & a0[1] & a0[2] & ~a0[3]) | (a0[0] & a0[1] & a0[2] & a0[3]) | (~a0[0] & ~a0[1] & ~a0[2] & ~a0[3]));
@@ -49,14 +45,6 @@ module Lab3(a0, a1, s, result, a0_output, a1_output, result_output, cout, cout_o
 	assign cout_output[4] = 1;
 	assign cout_output[5] = 1;
 	assign cout_output[6] = ~(~cout & s);
-	
-	// Here I remade my decoder from lab 2 for simplicity and did the minterms from the 0 values since the
-	// Seven digits are on from 0 which is why they look different from above
-	// I also added another seven digit decoder with the same method I just mentioned for the 2s complement + 1
-	// On negative values from hex. That is what the XOR seperates on each expression so if the value is positive
-	// Then it will take the first decoded expression result and if it is negative
-	// Then it will take the second decoded expression result
-	
 	
 	// Display result_output
 	assign result_output[0] = (((~result[0] & ~result[1] & ~result[2] & result[3]) | (~result[0] & result[1] & ~result[2] & ~result[3]) | (result[0] & ~result[1] & result[2] & result[3]) | (result[0] & result[1] & ~result[2] & result[3])) & ((cout & s) | ~s)) 
